@@ -1,28 +1,36 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div class="container">
+  <Tags v-model="tags" color="success"/>
+  {{tags}}
+  <hr>
+    <Tags v-model="tags2"/>
+  {{tags2}}
+    <hr>
+    <Tags v-model="tags3" color="danger"/>
+  {{tags3}}
+</div>
+  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Tags from './components/Tags'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    Tags,
+  },
+  data(){
+    return{
+      tags : "Deneme,test, Success theme",
+      tags2 : "Primary, Default theme",
+      tags3 : "Danger deneme, danger theme"
+    }
   }
-}
+};
 </script>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+* {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
 }
 </style>
